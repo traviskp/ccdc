@@ -1,7 +1,6 @@
 - + - + - + - + - + - + - + - + -
 # User Management
 - + - + - + - + - + - + - + - + -
-
 # Change all user passwords
 # List usernames only and output to file:
 awk -F':' '{print $1}' /etc/passwd >> users.txt
@@ -9,8 +8,9 @@ awk -F':' '{print $1}' /etc/passwd >> users.txt
 # Format users.txt for password change and output to a new file
 sed 's/$/:IsThisIsADogsComplexPassword84/' users.txt >> users1.txt
 
-# Use chpasswd to change passwords
+# Use chpasswd 
 cat users1.txt | chpasswd
+
 # End change all user passwords
 
 # Change single user password
@@ -18,7 +18,7 @@ chpasswd
 user:password
 control + d
 
-# Look at sudoers
+# Look at sudoers 
 nano /etc/sudoers
 
 # View users with bash
@@ -37,8 +37,7 @@ usermod -s /usr/sbin/nologin USERNAME
 - + - + - + - + - + - + - + - + -
 # Scheduled actions
 - + - + - + - + - + - + - + - + -
-
-# Cronjobs:
+# Cronjobs
 crontab -l
 cd /etc/cron.daily .hourly .monthly .weekly 
 cd/etc/cron.d
@@ -71,9 +70,8 @@ chattr -i /folder orfilename
 # Re enable cursor / fix disappearing text in cmd
 stty echo
 
-
 - + - + - + - + - + - + - + - + -
-Work in progress
+Other things
 - + - + - + - + - + - + - + - + -
 
 # Packages:
