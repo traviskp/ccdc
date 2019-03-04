@@ -92,7 +92,7 @@ stty echo
 nmap -sN 192.168.225.0/24
 
 - + - + - + - + - + - + - + - + -
-Under construction
+Under construction 
 - + - + - + - + - + - + - + - + -
 
 # Need to setup systems to modify files and notify of changes as well as know what services are risky to be running
@@ -123,6 +123,8 @@ dpkg --list
 # Remove package:
 apt-get --purge remove packagename
 
-# seLinux
+# seLinux 
+# WRCCDC Black team tip: 
+# "without prep and documentation before hand [selinux] can cause your services to go offline.
 nano /etc/selinux/config
 SELINUX = enforcing
