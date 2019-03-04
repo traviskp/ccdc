@@ -12,7 +12,7 @@ cat users1.txt | chpasswd
 
 # Change single user password 
 chpasswd
-user:password
+root:NewInsecurePassword
 control + d
 
 # Look at sudoers 
