@@ -68,8 +68,11 @@ tail -f /var/log/apache2/acces.log
 - + - + - + - + - + - + - + - + -
 # Updates
 - + - + - + - + - + - + - + - + -
-# Did it early on with no issues but have heard it can be man in the middled
+# Did it early on with no issues, but have heard these can be man in the middled
 apt-get update
+
+# Security updates only
+apt-get install unattended-upgrades 
 
 - + - + - + - + - + - + - + - + -
 # Locate files
