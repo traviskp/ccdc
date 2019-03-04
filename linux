@@ -56,7 +56,10 @@ cat history >> history_backup
 # Services / Connections
 - + - + - + - + - + - + - + - + -
 service --status-all
+
 netstat -pant
+kill -9 pid
+
 tail -f /var/log/apache2/acces.log
 
 - + - + - + - + - + - + - + - + -
@@ -100,7 +103,3 @@ chown root:root /etc/ssh/sshd_config
 # seLinux
 nano /etc/selinux/config
 	SELINUX = enforcing
-  
-
-
-
