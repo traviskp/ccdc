@@ -18,11 +18,12 @@ control + d
 # Look at sudoers 
 nano /etc/sudoers
 
-# View users with bash
-cat /etc/passwd | grep "/bin/bash"
-
 # Show shells in use
 awk -F':' {print $7}' /etc/passwd|sort|uniq -c|sort -rn
+
+# View users with bash (or other login shells found above)
+cat /etc/passwd | grep "/bin/bash"
+
 
 # Add nologin
 cat /etc/shells
