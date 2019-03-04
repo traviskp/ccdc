@@ -72,7 +72,6 @@ find . -name "shell.php"
 - + - + - + - + - + - + - + - + -
 # Red Team Tricks
 - + - + - + - + - + - + - + - + -
-
 # Immutable files (Cannot modifiy files, even as root)
 lsattr
 chattr -i /folder orfilename 
