@@ -1,3 +1,5 @@
+# Note: file names will differ among linux versions
+
 - + - + - + - + - + - + - + - + -
 # User Management
 - + - + - + - + - + - + - + - + -
@@ -63,6 +65,11 @@ kill -9 pid
 tail -f /var/log/apache2/acces.log
 
 - + - + - + - + - + - + - + - + -
+# Locate files
+- + - + - + - + - + - + - + - + -
+find . -name "shell.php"
+
+- + - + - + - + - + - + - + - + -
 # Red Team Tricks
 - + - + - + - + - + - + - + - + -
 
@@ -74,7 +81,12 @@ chattr -i /folder orfilename
 stty echo
 
 - + - + - + - + - + - + - + - + -
-Other things
+# Quick ping scan
+- + - + - + - + - + - + - + - + -
+nmap -sN 192.168.225.0/24
+
+- + - + - + - + - + - + - + - + -
+Under construction
 - + - + - + - + - + - + - + - + -
 
 # Packages:
