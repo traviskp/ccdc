@@ -101,7 +101,6 @@ PermitRootLogin no
 ignoreRhosts yes
 HostBasedAuth no
 PermitEmptyPasswords no
-# Need to learn about
 # x11forward no
 maxauthtries 5
 ciphers aes128-ctr, aes192-ctr, aes256-ctr
