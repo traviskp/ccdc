@@ -24,8 +24,7 @@ awk -F':' {print $7}' /etc/passwd|sort|uniq -c|sort -rn
 # View users with bash (or other login shells found above)
 cat /etc/passwd | grep "/bin/bash"
 
-
-# Add nologin
+# Add nologin if it doesn't exist
 cat /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 
