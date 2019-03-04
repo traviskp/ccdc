@@ -2,7 +2,7 @@
 # User Management
 - + - + - + - + - + - + - + - + -
 
-# Change all user passwords
+# Change ALL user passwords
 # List usernames only and output to file:
 awk -F':' '{print $1}' /etc/passwd >> users.txt
 
