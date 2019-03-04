@@ -1,21 +1,16 @@
-# Note: file names will differ among linux versions
-
 - + - + - + - + - + - + - + - + -
 # User Management
 - + - + - + - + - + - + - + - + -
+
 # Change all user passwords
 # List usernames only and output to file:
 awk -F':' '{print $1}' /etc/passwd >> users.txt
 
-# Format users.txt for password change and output to a new file
+# Format users.txt for chpasswd and output to a new file
 sed 's/$/:IsThisIsADogsComplexPassword84/' users.txt >> users1.txt
-
-# Use chpasswd 
 cat users1.txt | chpasswd
 
-# End change all user passwords
-
-# Change single user password
+# Change single user password 
 chpasswd
 user:password
 control + d
@@ -51,8 +46,11 @@ nano /etc/crontab
 # Web server
 cp -r /var/www/ .
 
-# View history of box and back it up to refer to
-cat history >> history_backup
+# History of box 
+cat history >> history_backup1
+
+# Clear history if you 
+history -c && history -w
 
 - + - + - + - + - + - + - + - + -
 # Services / Connections
