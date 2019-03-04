@@ -1,17 +1,16 @@
 - + - + - + - + - + - + - + - + -
-# Some flows to hardening /monitoring systems 
+# User Management
 - + - + - + - + - + - + - + - + -
 
-# Change all user passwords:
+# Change all user passwords
 # List usernames only and output to file:
 awk -F':' '{print $1}' /etc/passwd >> users.txt
 
-# Format users.txt for password change and output to a new file:
+# Format users.txt for password change and output to a new file
 sed 's/$/:IsThisIsADogsComplexPassword84/' users.txt >> users1.txt
 
-# Use chpasswd to change passwords:
+# Use chpasswd to change passwords
 cat users1.txt | chpasswd
-
 # End change all user passwords
 
 # Change single user password
@@ -19,21 +18,25 @@ chpasswd
 user:password
 control + d
 
-# View users with bash:
+# Look at sudoers
+nano /etc/sudoers
+
+# View users with bash
 cat /etc/passwd | grep "/bin/bash"
 
-# Show shells in use:
+# Show shells in use
 awk -F':' {print $7}' /etc/passwd|sort|uniq -c|sort -rn
 
-# Add nologin:
+# Add nologin
 cat /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 
-# Change user to nologin:
+# Change user to nologin
 usermod -s /usr/sbin/nologin USERNAME
 
-# Look at sudoers:
-nano /etc/sudoers
+- + - + - + - + - + - + - + - + -
+# Scheduled actions
+- + - + - + - + - + - + - + - + -
 
 # Cronjobs:
 crontab -l
@@ -41,9 +44,37 @@ cd /etc/cron.daily .hourly .monthly .weekly
 cd/etc/cron.d
 nano /etc/crontab
 
-# Backup
-mkdir backupdirectory
-rsync -a --relative ~/TheFolder/ToBackUp . 
+- + - + - + - + - + - + - + - + -
+# Backups
+- + - + - + - + - + - + - + - + -
+# Web server
+cp -r /var/www/ .
+
+# View history of box and back it up to refer to
+cat history >> history_backup
+
+- + - + - + - + - + - + - + - + -
+# Services / Connections
+- + - + - + - + - + - + - + - + -
+service --status-all
+netstat -pant
+tail -f /var/log/apache2/acces.log
+
+- + - + - + - + - + - + - + - + -
+# Red Team Tricks
+- + - + - + - + - + - + - + - + -
+
+# Immutable files (Cannot modifiy files, even as root)
+lsattr
+chattr -i /folder orfilename 
+
+# Re enable cursor / fix disappearing text in cmd
+stty echo
+
+
+- + - + - + - + - + - + - + - + -
+Work in progress
+- + - + - + - + - + - + - + - + -
 
 # Packages:
 apt-cache pkgnames | grep telnet rsh, tftp, talk server
@@ -72,18 +103,6 @@ chown root:root /etc/ssh/sshd_config
 nano /etc/selinux/config
 	SELINUX = enforcing
   
-# Monitoring
-netstat -pant
-tail -f /var/log/apache2/acces.log
-
-# Red Team Tricks
-
-# Immutable files
-lsattr
-chattr -i /folder orfilename 
-
-# Re enable cursor / fix disappearing text in cmd
-stty echo
 
 
 
