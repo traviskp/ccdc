@@ -92,12 +92,8 @@ stty echo
 nmap -sN 192.168.225.0/24
 
 - + - + - + - + - + - + - + - + -
-Under construction 
-- + - + - + - + - + - + - + - + -
-
-# Need to setup systems to modify files and notify of changes as well as know what services are risky to be running
-
 # SSH 
+- + - + - + - + - + - + - + - + -
 # = Need to learn about
 nano /etc/ssh/sshd_config
 PermitRootLogin no	
@@ -112,6 +108,10 @@ ciphers aes128-ctr, aes192-ctr, aes256-ctr
 clientaliveint 900
 clientalivecountmax 0
 # usepam yes
+
+- + - + - + - + - + - + - + - + -
+Under construction / Didn't use
+- + - + - + - + - + - + - + - + -
 
 chown root:root /etc/ssh/sshd_config
 
