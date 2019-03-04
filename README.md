@@ -10,3 +10,5 @@ Post 2019 WRCCDC thoughts from a 2nd place finisher:
 3. Pushing updates from the windows update server / group policy management. We could have saved a lot of time by knowing active directory better.
 
 4. Knowing what services should / should not be running on Linux or Windows. Makes it easier to pinpoint vulnerable or malicious services running. 
+
+5. Change Logs . Important to keep a record of what you did so if you break it, can revert. System imaging...
