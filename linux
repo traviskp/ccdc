@@ -49,7 +49,7 @@ cp -r /var/www/ .
 # History of box 
 cat history >> history_backup1
 
-# Clear history if you 
+# Clear history 
 history -c && history -w
 
 - + - + - + - + - + - + - + - + -
@@ -64,6 +64,12 @@ netstat -pant
 kill -9 pid
 
 tail -f /var/log/apache2/acces.log
+
+- + - + - + - + - + - + - + - + -
+# Updates
+- + - + - + - + - + - + - + - + -
+# Did it early on with no issues but have heard it can be man in the middled
+apt-get update
 
 - + - + - + - + - + - + - + - + -
 # Locate files
@@ -89,29 +95,34 @@ nmap -sN 192.168.225.0/24
 Under construction
 - + - + - + - + - + - + - + - + -
 
+# Need to setup systems to modify files and notify of changes as well as know what services are risky to be running
+
+# SSH 
+# = Need to learn about
+nano /etc/ssh/sshd_config
+PermitRootLogin no	
+#Protocol2
+ignoreRhosts yes
+HostBasedAuth no
+PermitEmptyPasswords no
+# Need to learn about
+# x11forward no
+maxauthtries 5
+ciphers aes128-ctr, aes192-ctr, aes256-ctr
+clientaliveint 900
+clientalivecountmax 0
+# usepam yes
+
+chown root:root /etc/ssh/sshd_config
+
 # Packages:
 apt-cache pkgnames | grep telnet rsh, tftp, talk server
 dpkg --list
 
+
 # Remove package:
 apt-get --purge remove packagename
 
-# SSH
-nano /etc/ssh/sshd_config
-	PermitRootLogin no
-	Protocol2
-	ignoreRhosts yes
-	HostBasedAuth no
-	PermitEmptyPasswords no
-	x11forward no
-	maxauthtries 5
-	ciphers aes128-ctr, aes192-ctr, aes256-ctr
-	clientaliveint 900
-	clientalivecountmax 0
-	usepam yes
-
-chown root:root /etc/ssh/sshd_config
-
 # seLinux
 nano /etc/selinux/config
-	SELINUX = enforcing
+SELINUX = enforcing
