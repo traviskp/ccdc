@@ -63,7 +63,9 @@ kill pid
 netstat -pant
 kill -9 pid
 
-tail -f /var/log/apache2/acces.log
+tail -f /var/log/apache2/access.log
+tail -f /var/log/auth.log
+tail -f /var/log/syslog
 
 - + - + - + - + - + - + - + - + -
 # Updates
