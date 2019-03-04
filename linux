@@ -57,6 +57,9 @@ history -c && history -w
 - + - + - + - + - + - + - + - + -
 service --status-all
 
+ps aux | grep telnet
+kill pid
+
 netstat -pant
 kill -9 pid
 
