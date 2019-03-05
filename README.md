@@ -12,3 +12,5 @@ Post 2019 WRCCDC thoughts from a 2nd place finisher:
 4. Knowing what services should / should not be running on Linux or Windows. Makes it easier to pinpoint vulnerable or malicious services running. 
 
 5. Change Logs . Important to keep a record of what you did so if you break it, can revert. System imaging...
+
+6. Keep digging through https://github.com/trimstray/the-practical-linux-hardening-guide
