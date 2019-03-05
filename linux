@@ -132,3 +132,9 @@ apt-get --purge remove packagename
 # "without prep and documentation before hand [selinux] can cause your services to go offline.
 nano /etc/selinux/config
 SELINUX = enforcing
+
+# Verify only root has UID 0
+# "Multiple accounts with a UID of 0 afford more opportunity for potential intruders to guess 
+# a password for a privileged account.
+# https://github.com/trimstray/the-practical-linux-hardening-guide/wiki/Account-and-Access
+awk -F: '$3 == 0 && $1 != "root" { print $1 }' /etc/passwd | xargs passwd -l
