@@ -1,8 +1,7 @@
 # ccdc
 
-Some of the commands used to assist in securing systems for the Collegiate CyberDefense Competition.
+This repo contains some of the commands used to assist in securing systems for the Collegiate CyberDefense Competition. Our team (City College of SF) finished 2nd place in the 2019 Western Regional Qualifiers. Having everyone up to date on how to work the systems in front of them was key.
 
-Post 2019 WRCCDC thoughts from a 2nd place finisher:
 1. Need to focus on that dialing in the inital network diagram and pinpoint which boxes are being scored. Nmap is great for listining the boxes, but knowing how they are linked needs improvement. Diagrams provided can help, but usuall only include names. 
 
 2. Password change management sharing amongst team mates. Our system involved sheets of paper with passwords on them and blank lines to the right to include the box and username. Using loose sheets of paper made things tricky as they would get moved around the room.
