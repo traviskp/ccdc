@@ -117,6 +117,7 @@ clientalivecountmax 0
 Under construction / Didn't use
 - + - + - + - + - + - + - + - + -
 
+# Only all
 chown root:root /etc/ssh/sshd_config
 
 # Packages:
@@ -133,8 +134,20 @@ apt-get --purge remove packagename
 nano /etc/selinux/config
 SELINUX = enforcing
 
+# Linux Hardening Guide finds
+# https://github.com/trimstray/the-practical-linux-hardening-guide/wiki/
+
 # Verify only root has UID 0
 # "Multiple accounts with a UID of 0 afford more opportunity for potential intruders to guess 
-# a password for a privileged account.
-# https://github.com/trimstray/the-practical-linux-hardening-guide/wiki/Account-and-Access
+# a password for a privileged account."
 awk -F: '$3 == 0 && $1 != "root" { print $1 }' /etc/passwd | xargs passwd -l
+
+# Ensure all files are owned by a user and group
+# Unowned files may be caused by an intruder, by incorrect software installation or draft software removal, 
+# or by failure to remove all files belonging to a deleted account.
+
+# To find out all files that are not owned by any user:
+find / -nouser
+
+# To find out all files that are not owned by any group:
+find / -nogroup
