@@ -113,6 +113,9 @@ clientaliveint 900
 clientalivecountmax 0
 # usepam yes
 
+# Command to find all users with SSH access / current login status 
+# Whoops, forgot to save that one
+
 - + - + - + - + - + - + - + - + -
 Under construction / Didn't use
 - + - + - + - + - + - + - + - + -
